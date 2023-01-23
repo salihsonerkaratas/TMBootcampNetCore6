@@ -1,0 +1,96 @@
+﻿@model EntityLayer.Concrete.Member
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/RegisterLayout.cshtml";
+}
+<head>
+    @*   <script>
+    addEventListener("load", function () {
+    setTimeout(hideURLbar, 0);
+    }, false);
+
+    function hideURLbar() {
+    window.scrollTo(0, 1);
+    }
+    </script>*@
+    <link href="~/Pages/css/bootstrap.css" rel='stylesheet' type='text/css' />
+    <link href="~/Pages/single.css" rel='stylesheet' type='text/css' />
+    <link href="~/Pages/css/style.css" rel='stylesheet' type='text/css' />
+    <link href="~/Pages/css/fontawesome-all.css" rel="stylesheet">
+</head>
+
+<section class="main-content-w3layouts-agileits">
+    <div class="container">
+        <h3 class="tittle">Kayıt Sayfası</h3>
+        <div class="inner-sec">
+            <div class="login p-5 bg-light mx-auto mw-100">
+                @using (Html.BeginForm("Index", "Register", FormMethod.Post))
+                {
+                    <div class="form-row">
+                        <div class="col-md-6 mb-3">
+                            <label for="validationCustom01"><b>Adı</b></label>
+                            @Html.TextBoxFor(x=>x.MemberName, new{@class ="form-control"})
+                            @Html.ValidationMessageFor(x=>x.MemberName,"", new{@class ="form-danger"})
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="validationCustom02"><b>Soyadı</b></label>
+                            @Html.TextBoxFor(x=>x.MemberSurname, new{@class ="form-control"})
+                            @Html.ValidationMessageFor(x=>x.MemberSurname,"", new{@class ="form-danger"})
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="validationCustom03"><b>E-Posta</b></label>
+                            @Html.TextBoxFor(x=>x.MemberMail, new{@class ="form-control"})
+                            @Html.ValidationMessageFor(x=>x.MemberMail,"", new{@class ="form-danger"})
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="exampleInputPassword1 mb-2"><b>Şifre</b></label>
+                            @Html.TextBoxFor(x=>x.MemberPassword, new{@class ="form-control"})
+                            @Html.ValidationMessageFor(x=>x.MemberPassword,"", new{@class ="form-danger"})
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="exampleInputPassword2 mb-2"><b>Şifreyi Doğrula</b></label>
+                            <input type="password" class="form-control" id="password2">
+                        </div>
+
+                    </div>
+                    <button type="submit" class="btn btn-primary submit mb-4">Kaydol</button>
+                }
+
+            </div>
+        </div>
+    </div>
+</section>
+
+@*
+<script src="js/jquery-2.2.3.min.js"></script>
+<script>
+    window.onload = function () {
+        document.getElementById("password1").onchange = validatePassword;
+        document.getElementById("password2").onchange = validatePassword;
+    }
+
+    function validatePassword() {
+        var pass2 = document.getElementById("password2").value;
+        var pass1 = document.getElementById("password1").value;
+        if (pass1 != pass2)
+            document.getElementById("password2").setCustomValidity("Passwords Don't Match");
+        else
+            document.getElementById("password2").setCustomValidity('');
+        //empty string means no validation error
+    }
+</script>
+<script src="js/move-top.js"></script>
+<script src="js/easing.js"></script>
+<script>
+    jQuery(document).ready(function ($) {
+        $(".scroll").click(function (event) {
+            event.preventDefault();
+            $('html,body').animate({
+                scrollTop: $(this.hash).offset().top
+            }, 900);
+        });
+    });
+</script>*@
+

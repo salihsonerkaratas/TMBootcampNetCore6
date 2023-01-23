@@ -1,0 +1,28 @@
+﻿@using EntityLayer.Concrete
+@model List<Category>
+
+@{
+    ViewData["Title"] = "Kategori Sayfası";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 style="text-align:center">Kategoriler</h2>
+<br />
+<a style="margin-bottom:5px" class="btn btn-primary" asp-controller="#" asp-action="#">Kategori Ekle</a>
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>Kategori Adı</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+            <tr>
+                <td>@item.CategoryID</td>
+                <td>@item.CategoryName</td>
+                <td><a class ="btn btn-danger" asp-controller="#" asp-action="#">Sil</a></td>
+                <td><a class="btn btn-warning" asp-controller="#" asp-action="#">Güncelle</a></td>
+            </tr>
+    }
+</table>

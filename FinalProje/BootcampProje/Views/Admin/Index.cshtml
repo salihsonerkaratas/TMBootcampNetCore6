@@ -1,0 +1,27 @@
+﻿@using EntityLayer.Concrete
+@model List<Admin>
+
+@{
+    ViewData["Title"] = "Yönetici Sayfası";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 style="text-align:center">Yöneticiler</h2>
+<br />
+<br />
+<br />
+<table class="table table-bordered">
+    <tr>
+        <th>Admin ID</th>
+        <th>Admin Mail</th>
+        <th>Admin Şifre</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.AdminID</td>
+            <td>@item.AdminMail</td>
+            <td>@item.AdminSifre</td>
+        </tr>
+    }
+</table>
